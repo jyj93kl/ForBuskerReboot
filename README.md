@@ -55,6 +55,42 @@ hosting  :  Tomcat <br/>
 
 
 
+##### 프로젝트 구조
+~~~
+|-- ForBusker
+    |-- src/main/java
+        |-- com.platform.controller
+            |-- 
+        |-- com.platform.service
+        	|-- 
+    |-- src/main/resources
+    |-- node_modules
+    |-- _src
+        |-- main
+        	|-- webapp
+        		|-- resources
+        			|-- css
+        			|-- js
+        				|-- react
+        					|-- main.bundle.js
+        			|-- images
+        		|-- WEB-INF
+        			|-- spring
+        			|-- views
+        				|-- jsx
+        					|-- main.jsx
+        			|-- web.xml
+        |-- test
+    |-- target
+    |-- mvnw
+    |-- mvnw.cmd
+    |-- package-lock.json
+    |-- package.json
+    |-- pom.xml
+    |-- webpack.config.js
+~~~
+
+
 
 
 
