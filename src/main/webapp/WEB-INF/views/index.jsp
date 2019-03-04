@@ -7,6 +7,6 @@
 
 <body>
     <div id="root"></div>
-    <script src="${pageContext.request.contextPath}/resources/js/react/${pageName}.bundle.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/react/${name}.bundle.js"></script>
 </body>
 </html>
