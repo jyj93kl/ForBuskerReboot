@@ -26,5 +26,11 @@ module.exports = {
             test: /\.css$/,
             use: [ 'style-loader', 'css-loader' ]
         } ]
+    },
+    resolve: {
+        modules: [
+            path.join(__dirname, "src/main/webapp/resources"),
+            "node_modules"
+        ]
     }
 };

@@ -1,17 +1,17 @@
-import '../../../resources/css/busker_common/reset.css';
-import '../../../resources/css/busker_main/main.css';
+import 'css/busker_common/reset.css';
+import 'css/busker_main/main.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Main_header from './Main_header.jsx';
+import MainHeader from './busker_main/MainHeader.jsx';
 
 class MainPage extends React.Component {
 
     render() {
         return (
             <div className="container">
-                <Main_header/>
+                <MainHeader/>
             </div>
         );
     }
