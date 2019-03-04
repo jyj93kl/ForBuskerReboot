@@ -2,7 +2,8 @@
 <!doctype html>
 <html>
 <head>
-    <title>타이틀</title>
+    <title>For-Busker</title>
+    <meta name="viewport" content="initial-scale=1.0" user-scalable="no">
 </head>
 
 <body>
