@@ -1,7 +1,95 @@
-header {
-    background-color:aqua;
+.container {
+	margin: 0 auto;
+	max-width: 100%;
 }
 
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+header {
+	height: 650px;
+}
+
+header>.block {
+	width: 100%;
+	min-width: 1280px;
+	height: 650px;
+	position: absolute;
+	background-color: #000;
+	opacity: .5;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+header>img {
+	width: 100%;
+	min-width: 1280px;
+	height: 650px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -2;
+}
+
+header>nav {
+	width: 100%;
+	min-width: 1280px;
+	height: 100px;
+	color: #fff;
+	border-bottom: 1px solid #efefef;
+	line-height: 100px;
+}
+
+header>nav>span {
+	font-size: 20px;
+	font-weight: 500;
+	margin-left: 100px;
+}
+
+header>nav>ul {
+	float: right;
+	margin-right: 100px;
+}
+
+header>nav>ul>li {
+	float: left;
+	margin-left: 30px;
+	font-size: 15px;
+}
+
+header>.main-letter {
+	color: #fff;
+	margin: 0 auto;
+	width: 100%;
+	min-width: 1280px;
+	height: 550px;
+}
+
+header>.main-letter>h1 {
+	text-align: center;
+	font-size: 30px;
+	padding-top: 130px;
+}
+
+header>.main-letter>h4 {
+	text-align: center;
+	padding-top: 60px;
+	font-weight: 100;
+	line-height: 20px;
+}
+
+
+
+
+
+
 footer {
-    background-color:violet;
+	background-color: violet;
 }

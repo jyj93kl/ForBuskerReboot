@@ -3,7 +3,10 @@
 <html>
 <head>
     <title>For-Busker</title>
-    <meta name="viewport" content="initial-scale=1.0" user-scalable="no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="subject" content="메인페이지 | 포버스커">
+    <meta name="viewport" content="width=1100">
 </head>
 
 <body>
