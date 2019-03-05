@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 
 import MainHeader from './busker_main/MainHeader.jsx';
 import YoutubeList from './busker_main/YoutubeList.jsx';
-// import MainFooter from './busker_main/MainFooter.jsx';
+import MainFooter from './busker_main/MainFooter.jsx';
 // import LiveStream from './busker_main/LiveStream.jsx';
 
 class MainPage extends React.Component {
@@ -16,10 +16,11 @@ class MainPage extends React.Component {
             <div className="container">
                 <MainHeader/>
                 <YoutubeList/>
+                <YoutubeList/>
 
                 {/* <LiveStream/> */}
                 
-                {/* <MainFooter/> */}
+                <MainFooter/>
             </div>
         );
     }

@@ -9,7 +9,7 @@ class MainFooter extends React.Component {
     render() {
         return (
             <footer>
-                <h1>footer</h1>
+                <span>Copyright &copy; 2019 FOR BUSKER. All rights reserved.</span>
             </footer>
         );
     }
