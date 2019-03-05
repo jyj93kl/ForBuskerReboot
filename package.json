@@ -12,6 +12,7 @@
     "axios": "^0.18.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "react-slick": "^0.23.2",
     "react-youtube": "^7.9.0",
     "youtube-live-react": "^1.0.0"
   },
