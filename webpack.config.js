@@ -2,7 +2,8 @@ var path = require('path');
 module.exports = {
     context: path.resolve(__dirname, 'src/main/webapp/WEB-INF/views/jsx'),
     entry: {
-        main: './MainPage.jsx',
+        main: './busker_main/MainPage.jsx',
+        login: './busker_main/LoginPage.jsx',
         sub: './SubPage.jsx'
     },
     devtool: 'sourcemaps',

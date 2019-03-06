@@ -10,13 +10,22 @@ class MainHeader extends React.Component {
         return (
             <header>
                 <div className="block"></div>
-                <img src="../../../../resources/images/busker_main/main_img.jpg" alt="메인이미지" title="메인이미지"></img>
+                <img src="../../../../../resources/images/busker_main/main_img.jpg" alt="메인이미지" title="메인이미지"></img>
                 <nav>
                     <span>For-Busker ~ ♬</span>
                     <ul>
                         <li><a href="">로그인</a></li>
                         <li><a href="">회원가입</a></li> 
                         <li><a href="">공지사항</a></li>
+                        <li>
+                            <ul>
+                                <li>카테고리</li>
+                                <li><a href="">공연예정</a></li>
+                                <li><a href="">공연영상</a></li>
+                                <li><a href="">콜라보</a></li>
+                                <li><a href="">커뮤니티</a></li>
+                            </ul>
+                        </li>
                     </ul> 
                 </nav>
                 <div className="main-letter">

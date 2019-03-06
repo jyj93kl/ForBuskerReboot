@@ -4,10 +4,10 @@ import 'css/busker_main/main.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import MainHeader from './busker_main/MainHeader.jsx';
-import YoutubeList from './busker_main/YoutubeList.jsx';
-import MainFooter from './busker_main/MainFooter.jsx';
-// import LiveStream from './busker_main/LiveStream.jsx';
+import MainHeader from './component/MainHeader.jsx';
+import YoutubeList from './component/YoutubeList.jsx';
+import MainFooter from './component/MainFooter.jsx';
+// import LiveStream from './component/LiveStream.jsx';
 
 class MainPage extends React.Component {
 
@@ -15,8 +15,8 @@ class MainPage extends React.Component {
         return (
             <div className="container">
                 <MainHeader/>
-                <YoutubeList/>
-                <YoutubeList/>
+                <YoutubeList header="실시간 스트리밍"/>
+                <YoutubeList header="핫이슈 동영상"/>
 
                 {/* <LiveStream/> */}
                 
