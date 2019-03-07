@@ -12,10 +12,10 @@ class MainHeader extends React.Component {
                 <div className="block"></div>
                 <img src="../../../../../resources/images/busker_main/main_img.jpg" alt="메인이미지" title="메인이미지"></img>
                 <nav>
-                    <span>For-Busker ~ ♬</span>
+                    <span><a href="main">For-Busker ♬</a></span>
                     <ul>
                         <li><a href="login">로그인</a></li>
-                        <li><a href="">회원가입</a></li> 
+                        <li><a href="signup">회원가입</a></li> 
                         <li><a href="">공지사항</a></li>
                         <li>
                             <ul>

@@ -6,7 +6,7 @@ class LoginInput extends React.Component {
 
     render() {
         return (
-            <div class="top-container">
+            <div className="top-container">
                 <h1>로그인</h1>
                 <div className="form-container">
                     <input type="email" className="form-input" name="memEmail" placeholder="이메일"/>

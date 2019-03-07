@@ -4,6 +4,7 @@ module.exports = {
     entry: {
         main: './busker_main/MainPage.jsx',
         login: './busker_main/LoginPage.jsx',
+        signup: './busker_main/SignupPage.jsx',
         sub: './SubPage.jsx'
     },
     devtool: 'sourcemaps',
