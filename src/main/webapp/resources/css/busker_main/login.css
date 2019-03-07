@@ -12,20 +12,76 @@ a:hover {
 	text-decoration: none;
 }
 
+.clear {
+	clear: both;
+}
+
 form {
-    margin:0 auto;
-    width:600px;
+	margin: 0 auto;
+	width: 1280px;
+}
+
+.top-container {
+	margin: 70px auto;
+	width: 450px;
+}
+
+.top-container>h1 {
+	font-size: 20px;
+	font-weight: 100;
 }
 
 .form-container {
-    margin: 50px 0;
+	margin: 50px 0;
+}
+
+.check-box {
+	float: right;
+	margin: 0;
+	position: relative;
+	bottom: 20px;
+}
+
+.check-box label {
+	font-size: 12px;
+	font-weight: 100;
 }
 
 .form-input {
-    width:600px;
-    height: 50px;
-    padding-left: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    vertical-align: middle;
+	width: 430px;
+	height: 50px;
+	padding-left: 20px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	vertical-align: middle;
+	font-family: Arial, Helvetica, sans-serif; /* 배민 폰트문제로 폰트 변경 */
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.btn {
+	background-color: #f76e76;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	width: 450px;
+	height: 40px;
+	font-size: 15px;
+	font-weight: 100;
+	cursor: pointer;
+}
+
+span {
+	font-size: 12px;
+	font-weight: 100;
+	margin: 20px 0;
+	cursor: pointer;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
 }

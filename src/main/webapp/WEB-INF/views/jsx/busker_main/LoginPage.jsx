@@ -14,12 +14,9 @@ class LoginPage extends React.Component {
         return (
             <div className="container">
                 <Header />
-                
                 <form>
                     <LoginInput />
-                
                 </form>
-                
                 <Footer />
             </div>
         );
