@@ -1,6 +1,11 @@
 import 'css/busker_common/reset.css';
 
 import React from 'react';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIgloo } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faIgloo)
 
 class LoginInput extends React.Component {
     
@@ -138,6 +143,7 @@ class LoginInput extends React.Component {
                 <div className="form-container">
                     <input type="email" onChange={this.handleInputChange} id="memEmail" className="form-input" name="memEmail" placeholder="이메일"/>
                     <span>{this.state.message.m_email}</span>
+                    Favorite Food: <FontAwesomeIcon icon="igloo" />
                 </div>
                 <div className="form-container">
                     <input type="password" onChange={this.handleInputChange} onBlur={this.handlePwCheck} id="memPw" className="form-input" name="memPw" placeholder="비밀번호"/>
