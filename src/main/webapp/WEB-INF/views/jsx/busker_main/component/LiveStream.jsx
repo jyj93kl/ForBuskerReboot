@@ -18,7 +18,7 @@ class LiveStream extends React.Component {
                 iframeHeight='300' 
                 maxResults='50' 
                 youtubeChannelId='UCfphhCdsxJ547mA8ugt0X2g' 
-                googleApiKey='AIzaSyAIHawUHmuINP1fx4ajh-T_4MZp2BSnSYQ ' />
+                googleApiKey='AIzaSyAIHawUHmuINP1fx4ajh-T_4MZp2BSnSYQ' />
 
             </div>
         );

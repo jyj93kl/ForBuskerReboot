@@ -35,5 +35,8 @@ module.exports = {
             path.join(__dirname, "src/main/webapp/resources"),
             "node_modules"
         ]
+    },
+    node: {
+        fs: "empty"
     }
 };

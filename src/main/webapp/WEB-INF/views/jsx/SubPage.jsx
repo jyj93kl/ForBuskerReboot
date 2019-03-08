@@ -4,11 +4,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 
+const livechecker = require("livechecker");
+const youtubeLive = new livechecker.YouTube("AIzaSyAIHawUHmuINP1fx4ajh-T_4MZp2BSnSYQ");
+
 class SubPage extends React.Component {
 
     componentDidMount() { 
 
-        console.log("reqeustData");
         
         var requestData = new Object();
         requestData["test_1"] = "value_1";
@@ -16,7 +18,6 @@ class SubPage extends React.Component {
         requestData["test_3"] = "value_3";
         requestData["test_4"] = "value_4";
         
-        console.log(requestData);
         axios.post('/users', requestData ) 
         .then(function (result) {
             console.log(result);
