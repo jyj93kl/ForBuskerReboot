@@ -51,16 +51,19 @@ public class HomeController {
 	
 	@RequestMapping("/{name}")
     public String page(@PathVariable String name, Model model) {
-		System.out.println("name: "+ name);
-        model.addAttribute("pageName", name);
+        
+		logger.info("page move : " + name);
+		
+		model.addAttribute("pageName", name);
         return "index";
     }
 	
 	@RequestMapping(value = "/users", method = RequestMethod.POST)
 	public ModelAndView initObjectTree(HttpServletRequest request, ModelAndView modelAndView, @RequestBody Map<String, Object> requestMap) {
-		System.out.println("requestMap.toString(): " + requestMap.toString());
-		System.out.println("/users");
-		Object result = homeService.returnTest();
+
+		logger.info("axios test /users call");
+		
+		Object result = homeService.returnTest(requestMap);
 				
 		if(result instanceof Exception) {
 			modelAndView.addObject("errorMsg", ((Exception)result).getMessage());

@@ -1,19 +1,20 @@
 package com.platform.service;
 
 import java.util.HashMap;
+import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.platform.dao.HomeDao;
 
 @Service
 public class HomeService {
 
-	public Object returnTest(){
-		HashMap hm = new HashMap();
-		hm.put("test_trans_1", "1");
-		hm.put("test_trans_2", "2");
-		hm.put("test_trans_3", "3");
-		hm.put("test_trans_4", "4");
-		hm.put("test_trans_5", "5");
-		return hm;
+	@Autowired
+	private HomeDao homeDao;
+	
+	public Object returnTest(Map requestMap){
+		return homeDao.connection(requestMap);
 	}
 }

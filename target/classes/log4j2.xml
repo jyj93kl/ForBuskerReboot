@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+	</appenders>
+ 
+	<loggers>
+		<logger name="org.springframework" level="warn" additivity="false" >
+	    	<appender-ref ref="console" />
+	    </logger>
+	
+	    <logger name="org.apache.http" level="warn" additivity="false" >
+			<appender-ref ref="console" />
+	    </logger>
+	 	
+	 	<logger name="com.sinsiway.petra" level="info" additivity="false">
+			<appender-ref ref="console" />
+		</logger>
+		
+		<logger name="jdbc.connection"  level="off" additivity="false">
+			<appender-ref ref="console" />
+		</logger>
+		<logger name="jdbc.audit"  level="off" additivity="false">
+			<appender-ref ref="console" />
+		</logger>
+		<logger name="jdbc.sqlonly"  level="off" additivity="false">
+			<appender-ref ref="console" />
+		</logger>
+		<logger name="jdbc.resultset"  level="off" additivity="false">
+			<appender-ref ref="console" />
+		</logger>
+		<logger name="jdbc.sqltiming"  level="debug" additivity="false">
+			<appender-ref ref="console" />
+		</logger>
+		<logger name="jdbc.resultsettable"  level="debug" additivity="false">
+			<appender-ref ref="console" />
+		</logger>
+		
+	  	<root level="info" additivity="false">
+	  		<appender-ref ref="console" />
+	  	</root>
+	</loggers>
+
+</configuration>
