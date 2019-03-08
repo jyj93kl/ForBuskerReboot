@@ -7,25 +7,27 @@ class LoginInput extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isReg : false
+                email : false,
+                pw : false,
+                pwcheck : false,
+                name : false,
+                tel : false,
+                birthday : false
         };
         
-        console.log(this.state);
         
-        this.onClickButton = this.onClickButton.bind(this); // 이 코드를 사용하는 이유 https://www.zerocho.com/category/React/post/578232e7a479306028f43393
+        this.onClickButton = this.onClickButton.bind(this.state); // 이 코드를 사용하는 이유 https://www.zerocho.com/category/React/post/578232e7a479306028f43393
     }
 
     
-    handleInputChange(event) {
-        const target = event.target;
-        const name = target.name;
+    handleInputChange = (event) => {
+//        const target = event.target;
+//        const name = target.name;
         
-        console.log(target);
     }
     
-    
     onClickButton() {
-        console.log('회원가입 button click');
+        
     }
 
     render() {
