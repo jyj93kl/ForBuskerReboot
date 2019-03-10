@@ -3,7 +3,7 @@ import 'css/busker_main/signup.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SignupInput from './component/SignupInput.jsx';
+import SignupForm from './component/SignupForm.jsx';
 import Header from '../busker_common/Header.jsx';
 import Footer from '../busker_common/Footer.jsx';
 
@@ -15,7 +15,7 @@ class SignupPage extends React.Component {
             <div className="container">
                 <Header />
                 <form>
-                    <SignupInput />
+                    <SignupForm />
                 </form>
                 <Footer />
             </div>
