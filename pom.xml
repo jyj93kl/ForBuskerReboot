@@ -210,6 +210,13 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
+		
+		<!-- mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>6.0.5</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>

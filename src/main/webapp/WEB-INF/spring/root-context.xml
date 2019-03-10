@@ -10,7 +10,7 @@
 	<!-- JDBC의 연결을 처리하는 기능을 가진 DataSource -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" >
         <property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
-        <property name="url" value="jdbc:log4jdbc:mysql://localhost:3306/test" />
+        <property name="url" value="jdbc:log4jdbc:mysql://localhost:3306/test?serverTimezone=UTC" />
         <property name="username" value="root" /> 
         <property name="password" value="root" />
     </bean>
