@@ -2,12 +2,6 @@ import React from 'react';
 
 import SignupInput from './SignupInput.jsx';
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons'
-
-library.add(faCheck, faTimes)
-
 class SignupForm extends React.Component {
     
     constructor(props) {
