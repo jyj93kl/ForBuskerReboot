@@ -17,7 +17,7 @@ class Search extends React.Component {
             <form className="search-box">
                 <input type="text" placeholder="검색어를 입력해주세요."/>
                 <FontAwesomeIcon icon="search" className="search-icon"/>
-                <div class="clear"></div>
+                <div className="clear"></div>
             </form>
         );
     }

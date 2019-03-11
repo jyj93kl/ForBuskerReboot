@@ -5,7 +5,7 @@ import React from 'react';
 import Search from '../../busker_common/Search.jsx';
 
 
-class MainHeader extends React.Component {
+class NoticeHeader extends React.Component {
 
     render() {
         return (
@@ -39,4 +39,4 @@ class MainHeader extends React.Component {
 }
 
 
-export default MainHeader;
+export default NoticeHeader;

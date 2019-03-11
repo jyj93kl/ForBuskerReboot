@@ -16,16 +16,67 @@ a:hover {
 	clear: both;
 }
 
-.top-notice {
-	width: 1280px;
-	height:400px;
+.notice-top {
+	width: 100%;
+	min-width: 1280px;
+	height: auto;
 	margin: 0 auto;
+	background-color: #f4f4f4;
+	padding: 50px 0;
 }
 
-.top-notice>h1 {
-	
+.notice-top .accordion {
+	width:20%;
+	min-width: 240px;
+	height: 370px;
+	padding: 20px;
+	border: none;
+	background-color: #f4f4f4;
+	float: left;
+	margin-left: 8%;
+	border: none;
 }
 
-.top-notice>h3 {
-	
+.notice-top .accordion h3, p {
+	font-weight: 100;
+}
+
+/* width:100%로 초기화 하고있어서 한번더 240px 체크 */
+.notice-top .accordion__title {
+	width:20%;
+	min-width: 240px;
+	padding: 18px 0;
+	background-color: #f4f4f4;
+}
+
+.notice-top .notice-content {
+	width:60%;
+	min-width: 760px;
+	margin: 0 3%;
+	padding-top: 38px;
+	float: left;
+}
+
+.notice-content table {
+	width:60%;
+	min-width: 760px;
+	height: auto;
+}
+
+.notice-content th, tr, td {
+	height: 60px;
+	line-height:60px;
+	color: #333;
+	text-align: center;
+	font-weight: 100;
+	border-bottom:1px solid #ddd;
+}
+
+.notice-content td:nth-child(2) {
+	text-align:left;
+	padding-left:20px;
+}
+
+.notice-content td > a {
+	color:#000;
 }
