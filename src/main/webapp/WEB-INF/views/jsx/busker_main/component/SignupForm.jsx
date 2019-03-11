@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SignupInput from './SignupInput.jsx';
+import axios from 'axios';
 
 class SignupForm extends React.Component {
     
@@ -32,7 +33,6 @@ class SignupForm extends React.Component {
         this.onClickButton = this.onClickButton.bind(this);
         
     }
-
     
     // Input 값이 바뀔 때 마다 정규식 체크를 함
     handleInputChange = (event) => {
@@ -41,13 +41,13 @@ class SignupForm extends React.Component {
         const name = target.name;
         const value = event.target.value;
         
-        const yes = document.getElementById("yes-"+name.substring(3));
-        const no = document.getElementById("no-"+name.substring(3));
+        const yes = document.getElementById("yes-" + name);
+        const no = document.getElementById("no-" + name);
         
         var emailReg = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i; //이메일 정규식
         var pwReg = /^[A-Za-z0-9]{6,15}$/;
 
-        if (name == "memEmail" && value != "") {
+        if (name == "MEM_EMAIL" && value != "") {
             if (emailReg.test(value)) {
                 this.setState({ email : true, message : { ...this.state.message, m_email : "" } });
                 yes.style.visibility = 'visible';
@@ -59,7 +59,7 @@ class SignupForm extends React.Component {
                 yes.style.visibility = 'hidden';
             }
         }   
-        else if (name == "memPw" && value != "") {
+        else if (name == "MEM_PW" && value != "") {
             
             this.setState({ pw_value : value });
             
@@ -74,7 +74,7 @@ class SignupForm extends React.Component {
                 yes.style.visibility = 'hidden';
             }
         }
-        else if (name == "memPwCheck" && value != "") {
+        else if (name == "MEM_PW_CHECK" && value != "") {
             
             this.setState({ pwcheck_value : value });
             
@@ -89,7 +89,7 @@ class SignupForm extends React.Component {
                 yes.style.visibility = 'hidden';
             }
         }
-        else if (name == "memName") {
+        else if (name == "MEM_NAME") {
             if (value != "") {
                 this.setState({ name : true, message : { ...this.state.message, m_name : "" } });
                 yes.style.visibility = 'visible';
@@ -101,7 +101,7 @@ class SignupForm extends React.Component {
                 yes.style.visibility = 'hidden';
             }
         }
-        else if (name == "memTel") {
+        else if (name == "MEM_TEL") {
             if (value != "") {
                 this.setState({ tel : true, message : { ...this.state.message, m_tel : "" } });
                 yes.style.visibility = 'visible';
@@ -113,7 +113,7 @@ class SignupForm extends React.Component {
                 yes.style.visibility = 'hidden';
             }
         }
-        else if (name == "memBirthday") {
+        else if (name == "MEM_BIRTHDAY") {
             if (value != "") {
                 this.setState({ birthday : true, message : { ...this.state.message, m_birthday : "" } });
                 yes.style.visibility = 'visible';
@@ -135,13 +135,13 @@ class SignupForm extends React.Component {
         if (this.state.pw && this.state.pwcheck) {
             if (this.state.pw_value == this.state.pwcheck_value) {
                 this.setState({ message : { ...this.state.message, m_pwcheck : "" } });
-                document.getElementById("yes-PwCheck").style.visibility = 'visible';
-                document.getElementById("no-PwCheck").style.visibility = 'hidden';
+                document.getElementById("yes-MEM_PW_CHECK").style.visibility = 'visible';
+                document.getElementById("no-MEM_PW_CHECK").style.visibility = 'hidden';
             }
             else {
                 this.setState({ message : { ...this.state.message, m_pwcheck : "비밀번호가 일치하지 않습니다." } });
-                document.getElementById("no-PwCheck").style.visibility = 'visible';
-                document.getElementById("yes-PwCheck").style.visibility = 'hidden';
+                document.getElementById("no-MEM_PW_CHECK").style.visibility = 'visible';
+                document.getElementById("yes-MEM_PW_CHECK").style.visibility = 'hidden';
             }
         }
         
@@ -154,7 +154,29 @@ class SignupForm extends React.Component {
         const state = this.state;
         
         if (state.email && state.pw && state.pwcheck && state.name && state.tel && state.birthday && (state.pw_value == state.pwcheck_value)) {
-            alert("회원가입 정보가 모두 맞음. form action 진행");
+        
+            var memEmail = document.getElementById("memEmail");
+            var memPw = document.getElementById("memPw");
+            var memName = document.getElementById("memName");
+            var memTel = document.getElementById("memTel");
+            var memBirthday = document.getElementById("memBirthday");
+
+            var requestData = new Object();
+            requestData["MEM_EMAIL"] = memEmail.value;
+            requestData["MEM_PW"] = memPw.value;
+            requestData["MEM_NAME"] = memName.value;
+            requestData["MEM_TEL"] = memTel.value;
+            requestData["MEM_BIRTHDAY"] = memBirthday.value;
+
+            axios.post('/member/addMember.do', requestData ) 
+            .then(function (result) {
+                console.log(result);
+                if( result.data.returnData == "OK" ) location.href="main";
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
         }
         else {
             alert("회원가입 양식에 맞게 적으세요.");
@@ -168,63 +190,63 @@ class SignupForm extends React.Component {
                 <h1>회원가입</h1>
                 <SignupInput 
                     type="email"
-                    name="memEmail" 
+                    name="MEM_EMAIL" 
                     placeholder="이메일" 
                     id="memEmail" 
-                    yesId="yes-Email" 
-                    noId="no-Email" 
+                    yesId="yes-MEM_EMAIL" 
+                    noId="no-MEM_EMAIL" 
                     message={this.state.message.m_email} 
                     onChange={this.handleInputChange}
                 />
                 <SignupInput 
                     type="password"
-                    name="memPw" 
+                    name="MEM_PW" 
                     placeholder="비밀번호" 
                     id="memPw" 
-                    yesId="yes-Pw" 
-                    noId="no-Pw" 
+                    yesId="yes-MEM_PW" 
+                    noId="no-MEM_PW" 
                     message={this.state.message.m_pw} 
                     onChange={this.handleInputChange}
                     onBlur={this.handlePwCheck}
                 />
                 <SignupInput 
                     type="password"
-                    name="memPwCheck" 
+                    name="MEM_PW_CHECK" 
                     placeholder="비밀번호 확인" 
                     id="memPwCheck" 
-                    yesId="yes-PwCheck" 
-                    noId="no-PwCheck" 
+                    yesId="yes-MEM_PW_CHECK" 
+                    noId="no-MEM_PW_CHECK" 
                     message={this.state.message.m_pwcheck} 
                     onChange={this.handleInputChange}
                     onBlur={this.handlePwCheck}
                 />
                 <SignupInput 
                     type="text"
-                    name="memName" 
+                    name="MEM_NAME" 
                     placeholder="이름" 
                     id="memName" 
-                    yesId="yes-Name" 
-                    noId="no-Name" 
+                    yesId="yes-MEM_NAME" 
+                    noId="no-MEM_NAME" 
                     message={this.state.message.m_name} 
                     onChange={this.handleInputChange}
                 />
                 <SignupInput 
                     type="number"
-                    name="memTel" 
+                    name="MEM_TEL" 
                     placeholder="전화번호" 
                     id="memTel" 
-                    yesId="yes-Tel" 
-                    noId="no-Tel" 
+                    yesId="yes-MEM_TEL" 
+                    noId="no-MEM_TEL" 
                     message={this.state.message.m_tel} 
                     onChange={this.handleInputChange}
                 />
                 <SignupInput 
                     type="number"
-                    name="memBirthday" 
+                    name="MEM_BIRTHDAY" 
                     placeholder="생년월일" 
                     id="memBirthday" 
-                    yesId="yes-Birthday" 
-                    noId="no-Birthday" 
+                    yesId="yes-MEM_BIRTHDAY" 
+                    noId="no-MEM_BIRTHDAY" 
                     message={this.state.message.m_birthday} 
                     onChange={this.handleInputChange}
                 />
