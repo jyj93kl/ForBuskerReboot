@@ -1,0 +1,32 @@
+.search-box {
+	margin: 25px auto;
+	font-size: 0;
+	line-height: 0;
+	width: 440px;
+	height: 45px;
+	background: #fff;
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+
+.search-box input {
+	width: 360px;
+	height: 42px;
+	border: none;
+	margin-right:10px;
+	padding-left:15px;
+}
+
+/* svg-inline--fa.fa-w-16 해당 클래스가 width:1 em 으로 초기화 하고있음. */
+.search-box .svg-inline--fa.fa-w-16 {
+	width:32px;
+	height:32px;
+	color:#f76e76;
+	padding: 5px 10px;
+	float:right;
+	cursor: pointer;
+}
+
+.clear {
+	clear:both;
+}
