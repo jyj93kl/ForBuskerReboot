@@ -36,3 +36,13 @@ insert into emp values( 7876, 'ADAMS', 'CLERK', 7788, 1100, null, 20);
 insert into emp values( 7900, 'JAMES', 'CLERK', 7698, 950, null, 30);
 insert into emp values( 7934, 'MILLER', 'CLERK', 7782, 1300, null, 10);
    
+   
+CREATE TABLE MEMBER (
+    MEM_NO int  NOT NULL  AUTO_INCREMENT,
+    MEM_EMAIL varchar(100),
+    MEM_PW varchar(100),
+    MEM_NAME varchar(100),
+    MEM_TEL  varchar(100),
+    MEM_BIRTHDAY varchar(100),
+    CONSTRAINT PK_MEM_NO PRIMARY KEY ( MEM_NO )
+ ) engine=InnoDB;

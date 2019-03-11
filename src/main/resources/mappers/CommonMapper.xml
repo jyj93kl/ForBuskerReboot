@@ -6,5 +6,11 @@
     <select id="connection" parameterType="map" resultType="java.util.LinkedHashMap">
         select * from emp
     </select>
+
+    <insert id="addMember" parameterType="map">
+    INSERT INTO MEMBER(MEM_EMAIL,MEM_PW,MEM_NAME,MEM_TEL,MEM_BIRTHDAY) 
+    VALUES(#{MEM_EMAIL},#{MEM_PW},#{MEM_NAME},#{MEM_TEL},#{MEM_BIRTHDAY})
+    </insert>
+    
 </mapper>
 
