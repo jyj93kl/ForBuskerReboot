@@ -3,6 +3,7 @@ package com.platform.member.controller;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,7 +35,7 @@ public class MemberController {
 		if(result instanceof Exception) {
 			modelAndView.addObject("errorMsg", ((Exception)result).getMessage());
 			modelAndView.addObject("errorCode", -100);
-		}else {
+		} else {
 			modelAndView.addObject("returnData", result);
 		}
 		
@@ -42,4 +43,33 @@ public class MemberController {
 		return modelAndView;
 	}
 	
+	
+	@RequestMapping(value = "/member/loginMember.do", method = RequestMethod.POST)
+	public ModelAndView loginMember(HttpServletRequest request, ModelAndView modelAndView, @RequestBody Map<String, Object> requestMap, HttpSession session) {
+		
+		logger.info("axios Call : /member/loginMember.do requestMap : " + requestMap.toString());
+		
+		Object result = memberSerivce.loginMember(requestMap);
+		
+		if (result != null) {
+			modelAndView.addObject("returnData", result);
+			modelAndView.addObject("message", "login_ok");
+			session.setAttribute("login", result);
+		}
+		else {
+			modelAndView.addObject("message", "login_no");
+
+		}
+		
+		modelAndView.setViewName("jsonView");
+		
+		return modelAndView;
+	}
+	
+	
+	@RequestMapping(value="/member/logout.do")
+	public String logout(){
+
+		return "logout";
+	}
 }

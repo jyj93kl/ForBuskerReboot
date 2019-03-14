@@ -26,4 +26,10 @@ public class MemberService {
 		return HttpStatus.OK;
 	}
 
+	public Object loginMember(Map<String, Object> requestMap) {
+
+		
+		return memberDao.loginMember(requestMap);
+	}
+
 }

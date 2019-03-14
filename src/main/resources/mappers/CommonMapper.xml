@@ -8,9 +8,13 @@
     </select>
 
     <insert id="addMember" parameterType="map">
-    INSERT INTO MEMBER(MEM_EMAIL,MEM_PW,MEM_NAME,MEM_TEL,MEM_BIRTHDAY) 
-    VALUES(#{MEM_EMAIL},#{MEM_PW},#{MEM_NAME},#{MEM_TEL},#{MEM_BIRTHDAY})
+        INSERT INTO MEMBER(MEM_EMAIL,MEM_PW,MEM_NAME,MEM_TEL,MEM_BIRTHDAY) 
+        VALUES(#{MEM_EMAIL},#{MEM_PW},#{MEM_NAME},#{MEM_TEL},#{MEM_BIRTHDAY})
     </insert>
+
+    <select id="loginMember" parameterType="map" resultType="java.util.LinkedHashMap">
+        SELECT * FROM MEMBER WHERE MEM_EMAIL = #{MEM_EMAIL} AND MEM_PW = #{MEM_PW}
+    </select>
     
 </mapper>
 

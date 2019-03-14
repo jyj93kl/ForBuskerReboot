@@ -13,8 +13,13 @@ public class MemberDao {
 	private SqlSessionTemplate sqlSession;
 	
 	public Object addMember(Map<String, Object> requestMap) {
-		// TODO Auto-generated method stub
+		
 		return sqlSession.insert("common.addMember",requestMap);
+	}
+
+	public Object loginMember(Map<String, Object> requestMap) {
+		
+		return sqlSession.selectOne("common.loginMember", requestMap);
 	}
 
 }

@@ -52,9 +52,9 @@ public class HomeController {
 	@RequestMapping("/{name}")
     public String page(@PathVariable String name, Model model) {
         
-		logger.info("page move : " + name);
+//		logger.info("page move : " + name);
 		
-		model.addAttribute("pageName", name);
+//		model.addAttribute("pageName", name);
         return "index";
     }
 	
