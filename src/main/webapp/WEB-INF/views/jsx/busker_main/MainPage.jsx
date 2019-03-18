@@ -17,9 +17,7 @@ class MainPage extends React.Component {
                 <MainHeader/>
                 <YoutubeList header="실시간 스트리밍"/>
                 <YoutubeList header="핫이슈 동영상"/>
-
                 {/* <LiveStream/> */}
-                
                 <MainFooter/>
             </div>
         );

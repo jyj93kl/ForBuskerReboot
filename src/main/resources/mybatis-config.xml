@@ -11,6 +11,6 @@
         <setting name="defaultExecutorType" value="REUSE"/>
         <setting name="defaultStatementTimeout" value="60"/>
         <setting name="callSettersOnNulls" value="true"/>
-        <setting name="mapUnderscoreToCamelCase" value="false"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
 </configuration>

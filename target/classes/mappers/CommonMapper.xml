@@ -15,6 +15,10 @@
     <select id="loginMember" parameterType="map" resultType="java.util.LinkedHashMap">
         SELECT * FROM MEMBER WHERE MEM_EMAIL = #{MEM_EMAIL} AND MEM_PW = #{MEM_PW}
     </select>
+
+    <select id="noticeMain" parameterType="com.platform.notice.vo.NoticeVO" resultType="com.platform.notice.vo.NoticeVO"> 
+        SELECT * FROM NOTICE 
+    </select>
     
 </mapper>
 
