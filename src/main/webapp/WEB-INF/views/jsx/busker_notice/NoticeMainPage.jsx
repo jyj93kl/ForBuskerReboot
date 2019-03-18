@@ -3,6 +3,7 @@ import 'css/busker_notice/notice_main.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import NoticeHeader from './component/NoticeHeader.jsx';
 import NoticeLeftMenu from './component/NoticeLeftMenu.jsx';
 import NoticeContent from './component/NoticeContent.jsx';
@@ -13,11 +14,11 @@ import 'css/busker_notice/notice_leftmenu.css';
 
 class NoticeMainPage extends React.Component {
 
+
     render() {
         return (
             <div className="container">
                 <NoticeHeader />
-                
                     <div className="notice-top">
                         <NoticeLeftMenu/>
                         <NoticeContent/>

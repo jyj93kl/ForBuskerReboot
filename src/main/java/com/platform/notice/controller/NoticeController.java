@@ -6,9 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.platform.notice.service.NoticeService;
 import com.platform.notice.vo.NoticeVO;
@@ -22,15 +21,16 @@ public class NoticeController {
 	@Autowired
 	private NoticeService service;
 
-	@RequestMapping(value="notice")
-	public String noticeList(NoticeVO nvo, Model m) throws Exception{
+	@RequestMapping(value="/notice/noticeMain.do")
+	public ModelAndView noticeList(NoticeVO nvo, ModelAndView modelAndView) throws Exception{
 		
 		List<NoticeVO> list = service.noticeMain(nvo);
 
-		m.addAttribute("list", list);
+		modelAndView.addObject("list", list);
 		
+		modelAndView.setViewName("jsonView");
 		
-		return "notice";
+		return modelAndView;
 			
 	}
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 
 
-const NoticeTableRow = ({no, title, date, categori}) => (
+const NoticeTableRow = ({no, title, writedate, categori}) => (
     <tr>
         <td>{no}</td>
         <td><a href="#">{title}</a></td>
-        <td>{date}</td>
+        <td>{writedate}</td>
         <td>{categori}</td>
     </tr>
 );
