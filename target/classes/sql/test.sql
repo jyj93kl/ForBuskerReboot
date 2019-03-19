@@ -44,6 +44,7 @@ CREATE TABLE MEMBER (
     MEM_NAME varchar(100),
     MEM_TEL  varchar(100),
     MEM_BIRTHDAY varchar(100),
+    MEM_LEVEL varchar(100),
     CONSTRAINT PK_MEM_NO PRIMARY KEY ( MEM_NO )
  ) engine=InnoDB;
 
