@@ -15,8 +15,9 @@
 </head>
 
 <body>
-    <input type="hidden" value="${sessionScope.login.MEM_EMAIL}" id="session-email"/>
     <div id="root"></div>
+    <input type="hidden" value="${sessionScope.login.MEM_EMAIL}" id="session-email"/>
+    <input type="hidden" value="${sessionScope.login.MEM_LEVEL}" id="session-level"/>
     <script src="${pageContext.request.contextPath}/resources/js/react/${name}.bundle.js"></script>
 </body>
 </html>
