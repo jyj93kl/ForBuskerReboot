@@ -4,6 +4,8 @@ import 'css/busker_notice/notice_main.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import {BrowserRouter as Router, Route, Link, BrowserHistory, IndexRoute} from 'react-router-dom';
+
 import NoticeHeader from './component/NoticeHeader.jsx';
 import NoticeLeftMenu from './component/NoticeLeftMenu.jsx';
 import NoticeContent from './component/NoticeContent.jsx';
@@ -36,6 +38,7 @@ class NoticeMainPage extends React.Component {
     }
 
 
+
     render() {
 
         const thisPage = this.state.page;
@@ -43,23 +46,34 @@ class NoticeMainPage extends React.Component {
         return (
             <div className="container">
                 <NoticeHeader />
-
+                <Router>
                     <div className="notice-top">
                     
-                        {
+                        {/* {
                             thisPage == "list" && <NoticeLeftMenu />
                         }
 
                         {
                             thisPage == "list" ? <NoticeContent/> : <NoticeWrite /> 
+                        } */}
+
+                        
+                        {
+                            thisPage == "list" && <NoticeLeftMenu />
                         }
-                        
-                        
+
+                        {
+                            thisPage == "list" ? <NoticeContent /> : <Route path="/NoticeWrite" component={NoticeWrite}/>   
+                        }
+
                         <div id="notice-btn-container-list">
                             {
                                 document.getElementById('session-level').value == 'Admin' 
                                 &&
-                                <button onClick={this.handleNoticeWrite}>글쓰기</button>
+                                
+                                <Link to="/NoticeWrite">
+                                    <button onClick={this.handleNoticeWrite}>글쓰기</button>
+                                </Link>
                             }
                         </div>
                     
@@ -67,10 +81,16 @@ class NoticeMainPage extends React.Component {
 
                     </div>
 
+                </Router>
                 <Footer />
             </div>
         );
     }
 }
 
-ReactDOM.render(<NoticeMainPage/>, document.getElementById('root'));
+ReactDOM.render(
+<Router history={BrowserHistory}>
+    <Route path = "/notice_main" component = {NoticeMainPage} />
+    <Route path = "NoticeWrite" component = {NoticeWrite} />
+</Router>
+,document.getElementById('root'));

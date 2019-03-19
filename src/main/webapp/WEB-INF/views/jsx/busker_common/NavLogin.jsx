@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class NavLogin extends React.Component {
     render() {
         return (
