@@ -80,14 +80,7 @@ a:hover {
 	color: #000;
 }
 
-#notice-btn-container-list {
-	width: 60%;
-	min-width: 760px;
-	margin: 0 3%;
-	float: left;
-}
-
-#notice-btn-container-list button {
+.notice-content button {
 	width: 100px;
 	height: 40px;
 	margin-top: 50px;

@@ -4,7 +4,7 @@ import 'css/busker_notice/notice_main.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { BrowserRouter as Router, Link, Match, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 import NoticeHeader from './component/NoticeHeader.jsx';
 import NoticeContent from './component/NoticeContent.jsx';
@@ -24,24 +24,11 @@ class NoticeMainPage extends React.Component {
                     <div className="notice-top">
 
                     <Router>
-
                         <Route exact path="/notice_main" component={NoticeContent}/>
                         <Route path="/NoticeContent" component={NoticeContent}/>
                         <Route path="/NoticeWrite" component={NoticeWrite}/>    
 
-                        <div id="notice-btn-container-list">
-                            {
-                                document.getElementById('session-level').value == 'Admin' 
-                                &&
-                                
-                                <Link to="/NoticeWrite">
-                                    <button>글쓰기</button>
-                                </Link>
-                            }
-                        </div>
-                    
                         <div className="clear"></div>
-                    
                     </Router>
 
                     </div>
