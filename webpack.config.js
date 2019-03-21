@@ -14,6 +14,11 @@ module.exports = {
         path: __dirname,
         filename: './src/main/webapp/resources/js/react/[name].bundle.js'
     },
+    devServer: {
+        inline: true,
+        port: 7777,
+        historyApiFallback: true
+    },
     mode: 'none',
     module: {
         rules: [ {
