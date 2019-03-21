@@ -1,0 +1,27 @@
+.text-editor {
+	width: 75%;
+	min-width: 1280px;
+	margin: 0 auto;
+}
+
+.text-editor input {
+	width: 99%;
+	padding-left: 12px;
+	height: 40px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	height: 40px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+}
+
+.text-editor .quill {
+	width:100%;
+	background-color: #fff;
+	border-radius: 5px;
+}
+
+.text-editor .ql-editor {
+	min-height: 500px;
+}
