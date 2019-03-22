@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
- 
+
 import {
     Accordion,
     AccordionItem,
@@ -15,24 +15,29 @@ class NoticeLeftMenu extends React.Component {
     
     constructor(props) {
         super(props);
+        
+        this.state = {list : ""};
 
-//        this.onClickMenu = this.onClickMenu.bind(this);
+        this.onClickMenu = this.onClickMenu.bind(this);
     }
     
     onClickMenu = (event) => {
         
         var categori = event.target.getAttribute('name');
         
-        axios.post('/notice/noticeMain.do', categori)  
+        var requestData = new Object();
+        requestData["NOTICE_CATEGORI"] = categori;
+        
+        axios.post('/notice/noticeMain.do', requestData)  
         .then((result) => {  
-            const list = result.data.list; 
+            console.log(result);
+            const list = result.data.returnData; 
             
-            console.log("NoticeLeftMenu.jsx component() : ", list); 
+            console.log("NoticeTable.jsx component() : ", list); 
             
             this.setState({
                 list
             });
-            
 
         })
         .catch(function (error) {

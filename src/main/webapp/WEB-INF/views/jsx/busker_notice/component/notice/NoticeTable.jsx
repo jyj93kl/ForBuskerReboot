@@ -36,8 +36,19 @@ class NoticeTable extends React.Component {
             console.log(error);
         });
     }  
+    
+    
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            list : nextProps.listNameFromParent
+        })
+    }
+    
+    
+    
 
     render() {
+        console.log('render');
        return (
            <table>
                <tbody>

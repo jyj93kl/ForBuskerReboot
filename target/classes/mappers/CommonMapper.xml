@@ -17,7 +17,10 @@
     </select>
 
     <select id="noticeMain" parameterType="map" resultType="java.util.LinkedHashMap"> 
-        SELECT DATE_FORMAT(NOTICE_DATE, '%Y-%m-%d') as NOTICE_DATE, NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CATEGORI FROM NOTICE ORDER BY NOTICE_NO DESC
+        SELECT DATE_FORMAT(NOTICE_DATE, '%Y-%m-%d') as NOTICE_DATE, NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CATEGORI 
+        FROM NOTICE
+        WHERE NOTICE_CATEGORI = #{NOTICE_CATEGORI}
+        ORDER BY NOTICE_NO DESC
     </select>
 
     <insert id="noticeAdd" parameterType="map" useGeneratedKeys="true" keyProperty="NOTICE_NO">
