@@ -24,8 +24,8 @@ class NoticeMainPage extends React.Component {
                     <div className="notice-top">
 
                     <Router>
-                        {/* <Route exact path="/notice_main" component={NoticeContent}/> */}
-                        <Route exact path="/notice_main" component={NoticeWrite}/>
+                        <Route exact path="/notice_main" component={NoticeContent}/>
+                        {/* <Route exact path="/notice_main" component={NoticeWrite}/> */}
                         <Route path="/NoticeContent" component={NoticeContent}/>
                         <Route path="/NoticeWrite" component={NoticeWrite}/>    
 

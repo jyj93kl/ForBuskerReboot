@@ -1,15 +1,25 @@
 package com.platform.notice.dao;
 
-import java.util.List;
 import java.util.Map;
 
-import com.platform.notice.vo.NoticeVO;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-public interface NoticeDao {
+@Repository
+public class NoticeDao {
 	
-	// 게시글 리스트
-	public List<NoticeVO> noticeMain(NoticeVO nvo);
+	@Autowired
+	private SqlSessionTemplate sqlSession;
+	
+	public Object noticeMain(Map<String, Object> requestMap) {
+		
+		return sqlSession.selectList("common.noticeMain", requestMap);
+	}
 
-	public Object addNotice(Map<String, Object> requestMap);
+	public Object noticeAdd(Map<String, Object> requestMap) {
+
+		return sqlSession.insert("common.noticeAdd",requestMap);
+	}
 
 }

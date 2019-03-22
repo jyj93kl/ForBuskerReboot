@@ -14,9 +14,15 @@ class NoticeTable extends React.Component {
     }
 
     componentDidMount() { 
-        axios.post('/notice/noticeMain.do')  
+        var categori = "notice-all";
+
+        var requestData = new Object();
+        requestData["NOTICE_CATEGORI"] = categori;
+        
+        axios.post('/notice/noticeMain.do', requestData)  
         .then((result) => {  
-            const list = result.data.list; 
+            console.log(result);
+            const list = result.data.returnData; 
             
             console.log("NoticeTable.jsx component() : ", list); 
             
@@ -44,10 +50,10 @@ class NoticeTable extends React.Component {
                    {this.state.list != false && this.state.list.map((list, i) => {
                        return (
                            <NoticeTableRow 
-                               no={list.noticeNo}
-                               title={list.noticeTitle}
-                               categori={list.noticeCategori}
-                               writedate="insert 완성 후 다시 확인 (양식이 이상하게 들어감.)"
+                               no={list.NOTICE_NO}
+                               title={list.NOTICE_TITLE}
+                               categori={list.NOTICE_CATEGORI}
+                               writedate={list.NOTICE_DATE}
                                key={i} 
                            />
                        );

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
  
 import {
     Accordion,
@@ -15,11 +16,28 @@ class NoticeLeftMenu extends React.Component {
     constructor(props) {
         super(props);
 
-        this.onClickMenu = this.onClickMenu.bind(this);
+//        this.onClickMenu = this.onClickMenu.bind(this);
     }
     
-    onClickMenu() {
+    onClickMenu = (event) => {
         
+        var categori = event.target.getAttribute('name');
+        
+        axios.post('/notice/noticeMain.do', categori)  
+        .then((result) => {  
+            const list = result.data.list; 
+            
+            console.log("NoticeLeftMenu.jsx component() : ", list); 
+            
+            this.setState({
+                list
+            });
+            
+
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
     }
     
     render() {
@@ -29,34 +47,34 @@ class NoticeLeftMenu extends React.Component {
                     <AccordionItemTitle>
                         <h3>공지사항</h3>
                     </AccordionItemTitle>
-                    <AccordionItemBody onClick={this.onClickMenu} id="notice-all-member">
-                        <p>모든 회원</p>
+                    <AccordionItemBody onClick={this.onClickMenu} name="notice-all">
+                         모든 회원
                     </AccordionItemBody>
-                    <AccordionItemBody onClick={this.onClickMenu} id="notice-busker-member">
-                        <p>버스커 회원</p>
+                    <AccordionItemBody onClick={this.onClickMenu} name="notice-busker">
+                         버스커 회원 
                     </AccordionItemBody>
-                    <AccordionItemBody onClick={this.onClickMenu} id="notice-normal-member">
-                        <p>일반 회원</p>
+                    <AccordionItemBody onClick={this.onClickMenu} name="notice-normal">
+                         일반 회원 
                     </AccordionItemBody>
                 </AccordionItem>
                 <AccordionItem>
                     <AccordionItemTitle>
                         <h3>FAQ</h3>
                     </AccordionItemTitle>
-                    <AccordionItemBody onClick={this.onClickMenu} id="faq-often">
-                        <p>자주 묻는 질문</p>
+                    <AccordionItemBody onClick={this.onClickMenu} name="faq-often">
+                         자주 묻는 질문 
                     </AccordionItemBody>
-                    <AccordionItemBody onClick={this.onClickMenu} id="faq-member">
-                        <p>회원가입 / 개인정보</p>
+                    <AccordionItemBody onClick={this.onClickMenu} name="faq-member">
+                         회원가입 / 개인정보 
                     </AccordionItemBody>
-                    <AccordionItemBody onClick={this.onClickMenu} id="faq-busking">
-                        <p>버스킹</p>
+                    <AccordionItemBody onClick={this.onClickMenu} name="faq-busking">
+                         버스킹 
                     </AccordionItemBody>
-                    <AccordionItemBody onClick={this.onClickMenu} id="faq-streaming">
-                        <p>실시간 스트리밍</p>
+                    <AccordionItemBody onClick={this.onClickMenu} name="faq-streaming">
+                         실시간 스트리밍 
                     </AccordionItemBody>
-                    <AccordionItemBody onClick={this.onClickMenu} id="faq-video">
-                        <p>핫이슈 동영상</p>
+                    <AccordionItemBody onClick={this.onClickMenu} name="faq-video">
+                         핫이슈 동영상 
                     </AccordionItemBody>
                 </AccordionItem>
                 <AccordionItem>
