@@ -92,3 +92,16 @@ a:hover {
 	cursor: pointer;
 	float: right;
 }
+
+
+/*
+	왼쪽 카테고리 css
+*/
+
+.accordion__body {
+	cursor: pointer;
+}
+
+.accordion__body:hover {
+	background-color: #ddd;
+}

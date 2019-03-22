@@ -12,7 +12,6 @@ import NoticeWrite from './component/NoticeWrite.jsx';
 import Footer from '../busker_common/Footer.jsx';
 
 import 'react-accessible-accordion/dist/fancy-example.css';
-import 'css/busker_notice/notice_leftmenu.css';
 
 class NoticeMainPage extends React.Component {
 

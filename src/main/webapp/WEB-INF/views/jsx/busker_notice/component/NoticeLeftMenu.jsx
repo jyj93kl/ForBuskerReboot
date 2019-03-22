@@ -1,3 +1,24 @@
+/*
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 현재 사용 안함 @@@@@@@@@@
+ * NoticeContent.jsx 파일에 있음.
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';

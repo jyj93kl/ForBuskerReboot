@@ -1,7 +1,0 @@
-.accordion__body {
-	cursor: pointer;
-}
-
-.accordion__body:hover {
-	background-color: #ddd;
-}
