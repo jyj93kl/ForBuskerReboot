@@ -19,6 +19,11 @@
     <select id="noticeMain" parameterType="com.platform.notice.vo.NoticeVO" resultType="com.platform.notice.vo.NoticeVO"> 
         SELECT * FROM NOTICE 
     </select>
+
+    <insert id="addNotice" parameterType="com.platform.notice.vo.NoticeVO" useGeneratedKeys="true" keyProperty="NOTICE_NO">
+        INSERT INTO NOTICE(NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CATEGORI, NOTICE_WRITER, NOTICE_DATE) 
+        VALUES(#{NOTICE_TITLE}, #{NOTICE_CONTENT}, #{NOTICE_CATEGORI}, "관리자", curdate())
+    </insert>
     
 </mapper>
 

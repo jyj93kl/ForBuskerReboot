@@ -4,24 +4,48 @@
 	margin: 0 auto;
 }
 
-.text-editor input {
-	width: 99%;
-	padding-left: 12px;
-	height: 40px;
-	border-radius: 5px;
-	border: 1px solid #ddd;
-	height: 40px;
+.text-editor .text-title {
+	width: 100%;
+}
+
+.text-editor .text-title select {
+	width: 18%;
+	height: 44px;
 	border-radius: 5px;
 	border: 1px solid #ddd;
 	margin-bottom: 20px;
 }
 
+.text-editor .text-title input {
+	width: 79%;
+	padding-left: 12px;
+	height: 40px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+	float: right;
+}
+
 .text-editor .quill {
-	width:100%;
+	width: 100%;
 	background-color: #fff;
 	border-radius: 5px;
 }
 
 .text-editor .ql-editor {
 	min-height: 500px;
+}
+
+.text-editor>button {
+	width: 200px;
+	height: 50px;
+	margin: 0 auto;
+	margin-top: 50px;
+	background-color: #ff5a5f;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	text-align: center;
+	cursor: pointer;
+	float: right;
 }
