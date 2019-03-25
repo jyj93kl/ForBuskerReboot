@@ -29,4 +29,9 @@ public class NoticeService {
 
 		return noticeDao.noticeView(requestMap);
 	}
+
+	public Object noticeUpdate(Map<String, Object> requestMap) {
+
+		return noticeDao.noticeUpdate(requestMap);
+	}
 }

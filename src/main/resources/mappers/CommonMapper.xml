@@ -35,6 +35,9 @@
         ORDER BY NOTICE_NO DESC
     </select>
     
+    <update id="noticeUpdate" parameterType="map">
+        UPDATE NOTICE SET NOTICE_TITLE = #{NOTICE_TITLE}, NOTICE_CONTENT = #{NOTICE_CONTENT}, NOTICE_CATEGORI = #{NOTICE_CATEGORI} WHERE NOTICE_NO=#{NOTICE_NO}
+    </update>
     
 </mapper>
 

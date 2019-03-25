@@ -27,4 +27,9 @@ public class NoticeDao {
 		return sqlSession.selectOne("common.noticeView", requestMap);
 	}
 
+	public Object noticeUpdate(Map<String, Object> requestMap) {
+
+		return sqlSession.update("common.noticeUpdate", requestMap);
+	}
+
 }

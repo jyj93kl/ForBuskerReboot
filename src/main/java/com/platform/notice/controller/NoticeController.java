@@ -81,4 +81,25 @@ public class NoticeController {
 		return modelAndView;
 	}
 	
+	
+	@RequestMapping(value = "/notice/updateNotice.do", method = RequestMethod.POST)
+	public ModelAndView noticeUpdate(HttpServletRequest request, ModelAndView modelAndView, @RequestBody Map<String, Object> requestMap) throws Exception {
+
+		logger.info("axios Call : /notice/updateNotice.do requestMap : " + requestMap.toString());
+		
+		Object result = service.noticeUpdate(requestMap);
+				
+		if(result instanceof Exception) {
+			modelAndView.addObject("errorMsg", ((Exception)result).getMessage());
+			modelAndView.addObject("errorCode", -100);
+		} else {
+			modelAndView.addObject("returnData", result);
+		}
+		
+		modelAndView.setViewName("jsonView");
+		return modelAndView;
+	}
+	
+	
+	
 }
