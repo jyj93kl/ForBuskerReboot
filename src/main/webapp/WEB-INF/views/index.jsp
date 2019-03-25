@@ -20,7 +20,7 @@
     <input type="hidden" value="${sessionScope.login.MEM_LEVEL}" id="session-level"/>
     <script>
     	var pageName = '${name}';
-		if (pageName == 'NoticeWrite') location.href="notice_main"
+		if (pageName == 'NoticeWrite' || pageName == 'NoticeView' ) location.href="notice_main"
     </script>
     <script src="${pageContext.request.contextPath}/resources/js/react/${name}.bundle.js"></script>
 </body>

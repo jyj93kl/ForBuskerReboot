@@ -27,6 +27,14 @@
         INSERT INTO NOTICE(NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CATEGORI, NOTICE_WRITER, NOTICE_DATE) 
         VALUES(#{NOTICE_TITLE}, #{NOTICE_CONTENT}, #{NOTICE_CATEGORI}, "관리자", curdate())
     </insert>
+
+    <select id="noticeView" parameterType="map" resultType="java.util.LinkedHashMap"> 
+        SELECT DATE_FORMAT(NOTICE_DATE, '%Y-%m-%d') as NOTICE_DATE, NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CATEGORI 
+        FROM NOTICE
+        WHERE NOTICE_NO = #{NOTICE_NO}
+        ORDER BY NOTICE_NO DESC
+    </select>
+    
     
 </mapper>
 

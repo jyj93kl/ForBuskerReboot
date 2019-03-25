@@ -24,4 +24,9 @@ public class NoticeService {
 
 		return noticeDao.noticeAdd(requestMap);
 	}
+
+	public Object noticeView(Map<String, Object> requestMap) {
+
+		return noticeDao.noticeView(requestMap);
+	}
 }

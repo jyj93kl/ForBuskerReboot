@@ -66,4 +66,19 @@ public class NoticeController {
 		return modelAndView;
 	}
 	
+	
+	@RequestMapping(value="/notice/noticeView.do", method = RequestMethod.POST)
+	public ModelAndView noticeView(HttpServletRequest request, ModelAndView modelAndView, @RequestBody Map<String, Object> requestMap, HttpSession session) {
+		
+		logger.info("axios Call : /notice/noticeView.do requestMap : " + requestMap.toString());
+		
+		Object result = service.noticeView(requestMap);
+		
+		modelAndView.addObject("returnData", result);
+		
+		modelAndView.setViewName("jsonView");
+		
+		return modelAndView;
+	}
+	
 }

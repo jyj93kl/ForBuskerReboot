@@ -19,7 +19,12 @@ public class NoticeDao {
 
 	public Object noticeAdd(Map<String, Object> requestMap) {
 
-		return sqlSession.insert("common.noticeAdd",requestMap);
+		return sqlSession.insert("common.noticeAdd", requestMap);
+	}
+
+	public Object noticeView(Map<String, Object> requestMap) {
+
+		return sqlSession.selectOne("common.noticeView", requestMap);
 	}
 
 }
