@@ -171,7 +171,7 @@ class SignupForm extends React.Component {
             axios.post('/member/addMember.do', requestData ) 
             .then(function (result) {
                 console.log(result);
-                if( result.data.returnData == "OK" ) location.href="main";
+                if( result.data.returnData == "OK" ) location.href="/main/login";
             })
             .catch(function (error) {
                 console.log(error);
