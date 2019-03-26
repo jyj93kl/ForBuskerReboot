@@ -83,7 +83,7 @@ class NoticeWrite extends React.Component {
                 axios.post('/notice/addNotice.do', requestData ) 
                 .then(function (result) {
                     console.log(result);
-                    if( result.data.returnData == 1 ) alert("게시글 작성이 완료되었습니다."); location.href="/notice_main";
+                    if( result.data.returnData == 1 ) alert("게시글 작성이 완료되었습니다."); location.href="/notice/notice_main";
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -93,7 +93,7 @@ class NoticeWrite extends React.Component {
                 axios.post('/notice/updateNotice.do', requestData ) 
                 .then(function (result) {
                     console.log(result);
-                    if( result.data.returnData == 1 ) alert("게시글 수정이 완료되었습니다."); location.href="/notice_main";
+                    if( result.data.returnData == 1 ) alert("게시글 수정이 완료되었습니다."); location.href="/notice/notice_main";
                 })
                 .catch(function (error) {
                     console.log(error);

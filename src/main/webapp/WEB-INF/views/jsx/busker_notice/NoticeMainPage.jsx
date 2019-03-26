@@ -24,15 +24,15 @@ class NoticeMainPage extends React.Component {
                     <div className="notice-top">
 
                     <Router>
-                        <Route exact path="/notice_main" component={NoticeContent}/>
-                        <Route path="/NoticeContent" component={NoticeContent}/>
+                        <Route exact path="/notice/notice_main" component={NoticeContent}/>
+                        <Route path="/notice/NoticeContent" component={NoticeContent}/>
                         <Switch>
-                            <Route path="/NoticeWrite/:num" component={NoticeWrite}/>  
-                            <Route path="/NoticeWrite" component={NoticeWrite}/>    
+                            <Route path="/notice/NoticeWrite/:num" component={NoticeWrite}/>  
+                            <Route path="/notice/NoticeWrite" component={NoticeWrite}/>    
                         </Switch>
                         <Switch>
-                            <Route path="/NoticeView/:num" component={NoticeView}/>
-                            <Route path="/NoticeView" component={NoticeView}/>  
+                            <Route path="/notice/NoticeView/:num" component={NoticeView}/>
+                            <Route path="/notice/NoticeView" component={NoticeView}/>  
                         </Switch>
                         <div className="clear"></div>
                     </Router>

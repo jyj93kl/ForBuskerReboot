@@ -56,7 +56,7 @@ class NoticeView extends React.Component {
             
             alert("게시글 삭제가 완료되었습니다.");
             
-            location.href="/notice_main";
+            location.href="/notice/notice_main";
 
         })
         .catch(function (error) {
@@ -81,9 +81,9 @@ class NoticeView extends React.Component {
                     </div>
                     <div className="notice-view-content" dangerouslySetInnerHTML={ {__html: contentCode} }></div>
                     <div className="notice-view-button">
-                        <Link to={`/NoticeWrite/${this.state.pageNum}`}><button type="button">수정하기</button></Link>
+                        <Link to={`/notice/NoticeWrite/${this.state.pageNum}`}><button type="button">수정하기</button></Link>
                         <button type="button" onClick={this.handleDelete}>삭제하기</button>
-                        <Link to="/NoticeContent"><button type="button">목록으로</button></Link>
+                        <Link to="/notice/NoticeContent"><button type="button">목록으로</button></Link>
                     </div>
                     <div className="clear"></div>
                 </div>

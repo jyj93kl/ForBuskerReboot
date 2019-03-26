@@ -15,8 +15,9 @@ module.exports = {
         filename: './src/main/webapp/resources/js/react/[name].bundle.js'
     },
     devServer: {
+        port: 8000,
         inline: true,
-        port: 7777,
+        overlay: true,
         historyApiFallback: true
     },
     mode: 'none',

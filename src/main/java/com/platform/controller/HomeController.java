@@ -49,14 +49,22 @@ public class HomeController {
 	}
 	
 	
-	@RequestMapping("/{name}")
-    public String page(@PathVariable String name, Model model) {
+	@RequestMapping("/main/{name}")
+    public String indexPage(@PathVariable String name, Model model) {
         
-//		logger.info("page move : " + name);
+		logger.info("main move : " + name);
 		
-//		model.addAttribute("pageName", name);
-        return "index";
+		return "index";
     }
+	
+	@RequestMapping("/notice/{name}")
+    public String noticePage(@PathVariable String name, Model model) {
+        
+		logger.info("notice move : " + name);
+		
+		return "notice";
+    }
+
 	
 	@RequestMapping(value = "/users", method = RequestMethod.POST)
 	public ModelAndView initObjectTree(HttpServletRequest request, ModelAndView modelAndView, @RequestBody Map<String, Object> requestMap) {

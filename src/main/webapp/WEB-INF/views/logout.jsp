@@ -2,4 +2,4 @@
     pageEncoding="UTF-8"%>
 
 <%session.invalidate(); %>
-<%response.sendRedirect("/main"); %>
+<%response.sendRedirect("/main/main"); %>

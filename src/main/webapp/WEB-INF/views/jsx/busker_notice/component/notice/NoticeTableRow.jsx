@@ -10,7 +10,7 @@ const NoticeTableRow = ({no, title, writedate, categori}) => {
     return (
         <tr>
             <td>{no}</td>
-            <td><Link to={`/NoticeView/${no}`}>{title}</Link></td>
+            <td><Link to={`/notice/NoticeView/${no}`}>{title}</Link></td>
             <td>{writedate}</td>
             <td>{categori}</td>
         </tr>

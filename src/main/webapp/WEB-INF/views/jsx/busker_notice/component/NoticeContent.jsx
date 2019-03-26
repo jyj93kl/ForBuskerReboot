@@ -101,7 +101,7 @@ class NoticeContent extends React.Component {
                         document.getElementById('session-level').value == 'Admin' 
                         &&
                         
-                        <Link to="/NoticeWrite">
+                        <Link to="/notice/NoticeWrite">
                             <button>글쓰기</button>
                         </Link>
                     }
