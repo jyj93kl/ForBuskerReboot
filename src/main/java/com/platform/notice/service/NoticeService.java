@@ -34,4 +34,9 @@ public class NoticeService {
 
 		return noticeDao.noticeUpdate(requestMap);
 	}
+
+	public Object noticeDelete(Map<String, Object> requestMap) {
+		
+		return noticeDao.noticeDelete(requestMap);
+	}
 }

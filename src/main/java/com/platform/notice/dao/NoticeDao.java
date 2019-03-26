@@ -32,4 +32,9 @@ public class NoticeDao {
 		return sqlSession.update("common.noticeUpdate", requestMap);
 	}
 
+	public Object noticeDelete(Map<String, Object> requestMap) {
+
+		return sqlSession.delete("common.noticeDelete", requestMap);
+	}
+
 }

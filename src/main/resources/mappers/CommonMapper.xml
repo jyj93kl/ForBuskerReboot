@@ -38,6 +38,10 @@
     <update id="noticeUpdate" parameterType="map">
         UPDATE NOTICE SET NOTICE_TITLE = #{NOTICE_TITLE}, NOTICE_CONTENT = #{NOTICE_CONTENT}, NOTICE_CATEGORI = #{NOTICE_CATEGORI} WHERE NOTICE_NO=#{NOTICE_NO}
     </update>
+
+    <delete id="noticeDelete" parameterType="map">
+	DELETE FROM NOTICE WHERE NOTICE_NO = #{NOTICE_NO}
+</delete>
     
 </mapper>
 

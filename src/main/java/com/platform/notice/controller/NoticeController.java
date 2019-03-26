@@ -101,5 +101,19 @@ public class NoticeController {
 	}
 	
 	
+	@RequestMapping(value="/notice/noticeDelete.do", method = RequestMethod.POST)
+	public ModelAndView noticeDelete(HttpServletRequest request, ModelAndView modelAndView, @RequestBody Map<String, Object> requestMap, HttpSession session) {
+		
+		logger.info("axios Call : /notice/noticeDelete.do requestMap : " + requestMap.toString());
+		
+		Object result = service.noticeDelete(requestMap);
+		
+		modelAndView.addObject("returnData", result);
+		
+		modelAndView.setViewName("jsonView");
+		
+		return modelAndView;
+	}
+	
 	
 }
