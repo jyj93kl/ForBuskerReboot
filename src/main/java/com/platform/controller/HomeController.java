@@ -64,24 +64,13 @@ public class HomeController {
 		
 		return "notice";
     }
-
 	
-	@RequestMapping(value = "/users", method = RequestMethod.POST)
-	public ModelAndView initObjectTree(HttpServletRequest request, ModelAndView modelAndView, @RequestBody Map<String, Object> requestMap) {
-
-		logger.info("axios test /users call");
+	@RequestMapping("/notice/{name}/{no}")
+    public String noticePage1(@PathVariable String name, String no, Model model) {
+        
+		logger.info("notice move : " + name + no);
 		
-		Object result = homeService.returnTest(requestMap);
-				
-		if(result instanceof Exception) {
-			modelAndView.addObject("errorMsg", ((Exception)result).getMessage());
-			modelAndView.addObject("errorCode", -100);
-		}else {
-			modelAndView.addObject("returnData", result);
-		}
-		
-		modelAndView.setViewName("jsonView");
-		return modelAndView;
-	}
+		return "notice";
+    }
 	
 }

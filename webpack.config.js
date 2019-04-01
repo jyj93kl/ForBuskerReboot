@@ -5,8 +5,7 @@ module.exports = {
         main: './busker_main/MainPage.jsx',
         login: './busker_main/LoginPage.jsx',
         signup: './busker_main/SignupPage.jsx',
-        notice_main: './busker_notice/NoticeMainPage.jsx',
-        sub: './SubPage.jsx'
+        notice_main: './busker_notice/NoticeMainPage.jsx'
     },
     devtool: 'sourcemaps',
     cache: true,
