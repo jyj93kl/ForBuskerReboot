@@ -2,6 +2,7 @@ import 'css/busker_common/reset.css';
 import 'css/busker_notice/notice_search.css';
 
 import axios from 'axios';
+
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
@@ -9,6 +10,9 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 library.add(faSearch)
 
 import React from 'react';
+
+import { connect } from 'react-redux';
+//import { search } from '../../actions';
 
 
 class NoticeSearch extends React.Component {
@@ -40,6 +44,7 @@ class NoticeSearch extends React.Component {
                     list
                 });
                 
+                
             })
             .catch(function (error) {
                 console.log(error);
@@ -49,6 +54,8 @@ class NoticeSearch extends React.Component {
             alert("검색어를 입력해주세요.");
         }
     }
+    
+    
 
     render() {
         return (
@@ -59,6 +66,7 @@ class NoticeSearch extends React.Component {
             </form>
         );
     }
+    
 
 }
 
