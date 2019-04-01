@@ -116,4 +116,18 @@ public class NoticeController {
 	}
 	
 	
+	@RequestMapping(value="/notice/noticeSearch.do", method = RequestMethod.POST)
+	public ModelAndView noticeSearch(HttpServletRequest request, ModelAndView modelAndView, @RequestBody Map<String, Object> requestMap) {
+		
+		logger.info("axios Call : /notice/noticeSearch.do requestMap : " + requestMap.toString());
+		
+		Object result = service.noticeSearch(requestMap);
+		
+		modelAndView.addObject("returnData", result);
+		modelAndView.setViewName("jsonView");
+		
+		return modelAndView;
+	}
+	
+	
 }

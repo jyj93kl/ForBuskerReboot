@@ -60,7 +60,7 @@ public class HomeController {
 	@RequestMapping("/notice/{name}")
     public String noticePage(@PathVariable String name, Model model) {
         
-		logger.info("notice move : " + name);
+		logger.info("notice move 1 : " + name);
 		
 		return "notice";
     }
@@ -68,7 +68,7 @@ public class HomeController {
 	@RequestMapping("/notice/{name}/{no}")
     public String noticePage1(@PathVariable String name, String no, Model model) {
         
-		logger.info("notice move : " + name + no);
+		logger.info("notice move 2 : " + name + no);
 		
 		return "notice";
     }

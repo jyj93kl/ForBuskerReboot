@@ -3,10 +3,6 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="common">
-    <select id="connection" parameterType="map" resultType="java.util.LinkedHashMap">
-        select * from emp
-    </select>
-
     <insert id="addMember" parameterType="map">
         INSERT INTO MEMBER(MEM_EMAIL,MEM_PW,MEM_NAME,MEM_TEL,MEM_BIRTHDAY, MEM_LEVEL) 
         VALUES(#{MEM_EMAIL},#{MEM_PW},#{MEM_NAME},#{MEM_TEL},#{MEM_BIRTHDAY}, "Normal")
@@ -40,8 +36,15 @@
     </update>
 
     <delete id="noticeDelete" parameterType="map">
-	DELETE FROM NOTICE WHERE NOTICE_NO = #{NOTICE_NO}
-</delete>
+        DELETE FROM NOTICE WHERE NOTICE_NO = #{NOTICE_NO}
+    </delete>
+
+    <select id="noticeSearch" parameterType="map" resultType="java.util.LinkedHashMap"> 
+        SELECT DATE_FORMAT(NOTICE_DATE, '%Y-%m-%d') as NOTICE_DATE, NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CATEGORI 
+        FROM NOTICE
+        WHERE NOTICE_TITLE LIKE CONCAT('%',#{keyword},'%')
+        ORDER BY NOTICE_NO DESC
+    </select>
     
 </mapper>
 

@@ -37,4 +37,9 @@ public class NoticeDao {
 		return sqlSession.delete("common.noticeDelete", requestMap);
 	}
 
+	public Object noticeSearch(Map<String, Object> requestMap) {
+
+		return sqlSession.selectList("common.noticeSearch", requestMap);
+	}
+
 }

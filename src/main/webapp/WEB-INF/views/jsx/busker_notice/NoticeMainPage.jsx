@@ -15,14 +15,12 @@ import Footer from '../busker_common/Footer.jsx';
 import 'react-accessible-accordion/dist/fancy-example.css';
 
 class NoticeMainPage extends React.Component {
-
+    
     render() {
-
         return (
             <div className="container">
                 <NoticeHeader />
                     <div className="notice-top">
-
                     <Router>
                         <Route exact path="/notice/notice_main" component={NoticeContent}/>
                         <Route path="/notice/NoticeContent" component={NoticeContent}/>
