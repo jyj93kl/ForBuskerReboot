@@ -3,7 +3,7 @@ import 'css/busker_notice/notice_header.css';
 
 import React from 'react';
 import HeaderNav from '../../busker_common/HeaderNav.jsx';
-import Search from '../../busker_common/Search.jsx';
+import NoticeSearch from './NoticeSearch.jsx';
 
 
 class NoticeHeader extends React.Component {
@@ -15,7 +15,7 @@ class NoticeHeader extends React.Component {
                 <HeaderNav/>
                 <div className="main-letter">
                     <h1>FOR BUSKER에서 알려드립니다 !</h1>
-                    <Search />
+                    <NoticeSearch />
                 </div>
             </header>
         );

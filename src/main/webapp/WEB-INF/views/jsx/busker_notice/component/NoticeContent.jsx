@@ -1,9 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import NoticeTable from './notice/NoticeTable.jsx';
-import FaqTable from './faq/FaqTable.jsx';
-
+import NoticeTable from './NoticeTable.jsx';
 
 import {
     Accordion,

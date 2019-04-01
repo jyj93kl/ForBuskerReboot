@@ -1,5 +1,5 @@
 import 'css/busker_common/reset.css';
-import 'css/busker_common/search.css';
+import 'css/busker_notice/notice_search.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,7 +10,7 @@ library.add(faSearch)
 import React from 'react';
 
 
-class Search extends React.Component {
+class NoticeSearch extends React.Component {
 
     render() {
         return (
@@ -25,4 +25,4 @@ class Search extends React.Component {
 }
 
 
-export default Search;
+export default NoticeSearch;
