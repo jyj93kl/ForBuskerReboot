@@ -48,7 +48,6 @@ class NoticeTable extends React.Component {
     
 
     render() {
-        console.log('render');
        return (
            <table>
                <tbody>

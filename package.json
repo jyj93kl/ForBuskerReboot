@@ -16,6 +16,7 @@
     "dns": "^0.2.2",
     "livechecker": "^1.1.0",
     "net": "^1.0.2",
+    "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-accessible-accordion": "^2.4.5",
     "react-dom": "^16.8.3",

@@ -23,5 +23,4 @@ class NoticeHeader extends React.Component {
 
 }
 
-
 export default NoticeHeader;

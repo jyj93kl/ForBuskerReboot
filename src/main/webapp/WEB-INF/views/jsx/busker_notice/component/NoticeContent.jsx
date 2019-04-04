@@ -13,6 +13,9 @@ import {
 
 import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
 
+import { connect } from 'react-redux';
+import * as actions from '../../actions';  
+
 class NoticeContent extends React.Component {
     
     constructor(props) {
@@ -40,7 +43,7 @@ class NoticeContent extends React.Component {
             this.setState({
                 list
             });
-
+            
         })
         .catch(function (error) {
             console.log(error);
@@ -48,7 +51,6 @@ class NoticeContent extends React.Component {
     }
     
     render() {
-        
         return (
             <div>
                 <Accordion>
@@ -110,5 +112,10 @@ class NoticeContent extends React.Component {
 
 }
 
+const mapStateToProps = (state) => {
+    return {
+        searchList: state.Search.searchList
+    };
+}
 
-export default NoticeContent;
+export default connect(mapStateToProps)(NoticeContent);

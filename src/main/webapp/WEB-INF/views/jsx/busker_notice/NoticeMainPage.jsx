@@ -3,9 +3,11 @@ import 'css/busker_notice/notice_main.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
+import reducers from '../reducers';
 import NoticeHeader from './component/NoticeHeader.jsx';
 import NoticeContent from './component/NoticeContent.jsx';
 import NoticeWrite from './component/NoticeWrite.jsx';
@@ -13,6 +15,7 @@ import NoticeView from './component/NoticeView.jsx';
 import Footer from '../busker_common/Footer.jsx';
 
 import 'react-accessible-accordion/dist/fancy-example.css';
+
 
 class NoticeMainPage extends React.Component {
     
@@ -42,4 +45,11 @@ class NoticeMainPage extends React.Component {
     }
 }
 
-ReactDOM.render(<NoticeMainPage/>, document.getElementById('root'));
+const store = createStore(reducers);
+
+ReactDOM.render(
+    <Provider store={store}>
+        <NoticeMainPage/>
+    </Provider>,
+    document.getElementById('root')
+);

@@ -9,10 +9,11 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faSearch)
 
-import React from 'react';
-
+import React, { Component } from 'react';
+import { createStore } from 'redux';
 import { connect } from 'react-redux';
-//import { search } from '../../actions';
+import reducers from '../../reducers';
+import * as actions from '../../actions'; 
 
 
 class NoticeSearch extends React.Component {
@@ -35,15 +36,20 @@ class NoticeSearch extends React.Component {
             
             axios.post('/notice/noticeSearch.do', requestData)
             .then((result) => {  
-                console.log(result);
                 const list = result.data.returnData; 
-                
-                console.log("NoticeSearch.jsx component() : ", list); 
                 
                 this.setState({
                     list
                 });
                 
+                
+//                const store = createStore(reducers);
+//                store.subscribe(() => console.log("change state mainpage : ", store.getState()));
+//                store.dispatch(actions.search(list));
+//                
+//                console.log("! store" , this.props.store);
+                
+                this.props.onUpdateSearchList(list);
                 
             })
             .catch(function (error) {
@@ -66,9 +72,22 @@ class NoticeSearch extends React.Component {
             </form>
         );
     }
-    
 
 }
+
+let mapStateToProps = (state) => {
+    return {
+        searchList: state.Search.searchList
+    }
+}
+ 
+let mapDispatchToProps = (dispatch) =>{
+    return {
+        onUpdateSearchList: (searchList) => dispatch(actions.search(searchList))
+    };
+}
+ 
+NoticeSearch = connect(mapStateToProps, mapDispatchToProps)(NoticeSearch);
 
 
 export default NoticeSearch;
