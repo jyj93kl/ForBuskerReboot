@@ -10,11 +10,10 @@ import {
     AccordionItemBody,
 } from 'react-accessible-accordion';
 
-
 import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
-
 import { connect } from 'react-redux';
-import * as actions from '../../actions';  
+import reducers from '../../reducers';
+import * as actions from '../../actions'; 
 
 class NoticeContent extends React.Component {
     
@@ -43,6 +42,8 @@ class NoticeContent extends React.Component {
             this.setState({
                 list
             });
+            
+            this.props.onUpdateList();
             
         })
         .catch(function (error) {
@@ -112,10 +113,20 @@ class NoticeContent extends React.Component {
 
 }
 
-const mapStateToProps = (state) => {
+
+let mapStateToProps = (state) => {
     return {
-        searchList: state.Search.searchList
+        whatList: "search"
+    }
+}
+ 
+let mapDispatchToProps = (dispatch) => {
+    return {
+        onUpdateList: (searchList, whatList) => dispatch(actions.search('', 'list'))
     };
 }
+ 
+NoticeContent = connect(mapStateToProps, mapDispatchToProps)(NoticeContent);
 
-export default connect(mapStateToProps)(NoticeContent);
+
+export default NoticeContent;

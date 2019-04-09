@@ -10,7 +10,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 library.add(faSearch)
 
 import React, { Component } from 'react';
-import { createStore } from 'redux';
+//import { createStore } from 'redux';
 import { connect } from 'react-redux';
 import reducers from '../../reducers';
 import * as actions from '../../actions'; 
@@ -42,15 +42,7 @@ class NoticeSearch extends React.Component {
                     list
                 });
                 
-                
-//                const store = createStore(reducers);
-//                store.subscribe(() => console.log("change state mainpage : ", store.getState()));
-//                store.dispatch(actions.search(list));
-//                
-//                console.log("! store" , this.props.store);
-                
-                this.props.onUpdateSearchList(list);
-                
+                this.props.onUpdateList(list);
             })
             .catch(function (error) {
                 console.log(error);
@@ -77,13 +69,14 @@ class NoticeSearch extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        searchList: state.Search.searchList
+        searchList: state.Search.searchList,
+        whatList: "search"
     }
 }
  
-let mapDispatchToProps = (dispatch) =>{
+let mapDispatchToProps = (dispatch) => {
     return {
-        onUpdateSearchList: (searchList) => dispatch(actions.search(searchList))
+        onUpdateList: (searchList, whatList) => dispatch(actions.search(searchList, 'search'))
     };
 }
  

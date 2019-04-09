@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import NoticeTableRow from './NoticeTableRow.jsx';
 
+import { connect } from 'react-redux';
+import * as actions from '../../actions'; 
 
 class NoticeTable extends React.Component {
     
@@ -39,9 +41,18 @@ class NoticeTable extends React.Component {
     
     
     componentWillReceiveProps(nextProps) {
-        this.setState({
-            list : nextProps.listNameFromParent
-        })
+        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!! :: component Will receive props : ", nextProps);
+        
+        if(nextProps.whatList == 'list') {
+            this.setState({
+                list : nextProps.listNameFromParent
+            })
+        }
+        else if(nextProps.whatList == 'search') {
+            this.setState({
+                list : nextProps.searchList
+            })
+        }
     }
     
     
@@ -75,5 +86,12 @@ class NoticeTable extends React.Component {
 
 }
 
+const mapStateToProps = (state) => {
+    return {
+        searchList: state.Search.searchList,
+        whatList: state.Search.whatList
+    };
+}
 
-export default NoticeTable;
+
+export default connect(mapStateToProps)(NoticeTable);
