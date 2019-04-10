@@ -13,6 +13,7 @@ import NoticeHeader from './component/NoticeHeader.jsx';
 import NoticeContent from './component/NoticeContent.jsx';
 import NoticeWrite from './component/NoticeWrite.jsx';
 import NoticeView from './component/NoticeView.jsx';
+import Contactus from './component/Contactus.jsx';
 import Footer from '../busker_common/Footer.jsx';
 
 class NoticeMainPage extends React.Component {
@@ -25,6 +26,7 @@ class NoticeMainPage extends React.Component {
                     <Router>
                         <Route exact path="/notice/notice_main" component={NoticeContent}/>
                         <Route path="/notice/NoticeContent" component={NoticeContent}/>
+                        <Route path="/notice/Contactus" component={Contactus}/>
                         <Switch>
                             <Route path="/notice/NoticeWrite/:num" component={NoticeWrite}/>  
                             <Route path="/notice/NoticeWrite" component={NoticeWrite}/>    

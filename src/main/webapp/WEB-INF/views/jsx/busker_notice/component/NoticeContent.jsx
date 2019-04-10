@@ -25,7 +25,6 @@ class NoticeContent extends React.Component {
     
     onClickMenu = (event) => {
         var categori = event.target.getAttribute('name');
-        
         var requestData = new Object();
         requestData["NOTICE_CATEGORI"] = categori;
         
@@ -83,9 +82,11 @@ class NoticeContent extends React.Component {
                         </AccordionItemBody>
                     </AccordionItem>
                     <AccordionItem>
-                        <AccordionItemTitle onClick={this.onClickMenu} id="contact-us">
-                            <h3>1:1 문의하기</h3>
-                        </AccordionItemTitle>
+                        <Link to="/notice/Contactus">
+                            <AccordionItemTitle name="contact-us">
+                                1:1 문의하기
+                            </AccordionItemTitle>
+                        </Link>
                     </AccordionItem>
                 </Accordion>
                 <div className="notice-content">
