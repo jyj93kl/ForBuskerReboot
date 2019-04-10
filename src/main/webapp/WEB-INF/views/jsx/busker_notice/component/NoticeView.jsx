@@ -26,10 +26,8 @@ class NoticeView extends React.Component {
     
         axios.post('/notice/noticeView.do', requestData)  
         .then((result) => {  
-            console.log(result);
             const list = result.data.returnData; 
             
-            console.log("NoticeView.jsx component() : ", list); 
             
             this.setState({
                 list
@@ -52,8 +50,6 @@ class NoticeView extends React.Component {
     
         axios.post('/notice/noticeDelete.do', requestData)  
         .then((result) => {  
-            console.log(result);
-            
             alert("게시글 삭제가 완료되었습니다.");
             
             location.href="/notice/notice_main";

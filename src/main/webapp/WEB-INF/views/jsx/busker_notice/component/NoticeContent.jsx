@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-
-import NoticeTable from './NoticeTable.jsx';
-
+import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
+import { connect } from 'react-redux';
+import reducers from '../../../redux/reducers';
+import * as actions from '../../../redux/actions'; 
 import {
     Accordion,
     AccordionItem,
@@ -10,10 +11,7 @@ import {
     AccordionItemBody,
 } from 'react-accessible-accordion';
 
-import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
-import { connect } from 'react-redux';
-import reducers from '../../reducers';
-import * as actions from '../../actions'; 
+import NoticeTable from './NoticeTable.jsx';
 
 class NoticeContent extends React.Component {
     
@@ -26,7 +24,6 @@ class NoticeContent extends React.Component {
     }
     
     onClickMenu = (event) => {
-        
         var categori = event.target.getAttribute('name');
         
         var requestData = new Object();
@@ -34,17 +31,13 @@ class NoticeContent extends React.Component {
         
         axios.post('/notice/noticeMain.do', requestData)  
         .then((result) => {  
-            console.log(result);
             const list = result.data.returnData; 
-            
-            console.log("NoticeTable.jsx component() : ", list); 
             
             this.setState({
                 list
             });
             
-            this.props.onUpdateList();
-            
+            this.props.onUpdateList('list');
         })
         .catch(function (error) {
             console.log(error);
@@ -97,11 +90,9 @@ class NoticeContent extends React.Component {
                 </Accordion>
                 <div className="notice-content">
                     <NoticeTable listNameFromParent={this.state.list}/>
-                    
                     {
                         document.getElementById('session-level').value == 'Admin' 
                         &&
-                        
                         <Link to="/notice/NoticeWrite">
                             <button>글쓰기</button>
                         </Link>
@@ -116,7 +107,7 @@ class NoticeContent extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        whatList: "search"
+        whatList: 'list'
     }
 }
  

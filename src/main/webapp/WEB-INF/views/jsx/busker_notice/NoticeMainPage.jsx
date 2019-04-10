@@ -1,21 +1,19 @@
-import 'css/busker_common/reset.css';
-import 'css/busker_notice/notice_main.css';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import reducers from '../../redux/reducers';
 
-import reducers from '../reducers';
+import 'css/busker_common/reset.css';
+import 'css/busker_notice/notice_main.css';
+import 'react-accessible-accordion/dist/fancy-example.css';
+
 import NoticeHeader from './component/NoticeHeader.jsx';
 import NoticeContent from './component/NoticeContent.jsx';
 import NoticeWrite from './component/NoticeWrite.jsx';
 import NoticeView from './component/NoticeView.jsx';
 import Footer from '../busker_common/Footer.jsx';
-
-import 'react-accessible-accordion/dist/fancy-example.css';
-
 
 class NoticeMainPage extends React.Component {
     
@@ -23,7 +21,7 @@ class NoticeMainPage extends React.Component {
         return (
             <div className="container">
                 <NoticeHeader />
-                    <div className="notice-top">
+                <div className="notice-top">
                     <Router>
                         <Route exact path="/notice/notice_main" component={NoticeContent}/>
                         <Route path="/notice/NoticeContent" component={NoticeContent}/>
@@ -37,8 +35,7 @@ class NoticeMainPage extends React.Component {
                         </Switch>
                         <div className="clear"></div>
                     </Router>
-
-                    </div>
+                </div>
                 <Footer />
             </div>
         );

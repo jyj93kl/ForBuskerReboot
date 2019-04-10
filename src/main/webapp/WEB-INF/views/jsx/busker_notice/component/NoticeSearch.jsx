@@ -1,20 +1,17 @@
+import React, { Component } from 'react';
+import axios from 'axios';
+import { connect } from 'react-redux';
+import reducers from '../../../redux/reducers';
+import * as actions from '../../../redux/actions'; 
+
 import 'css/busker_common/reset.css';
 import 'css/busker_notice/notice_search.css';
-
-import axios from 'axios';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faSearch)
-
-import React, { Component } from 'react';
-//import { createStore } from 'redux';
-import { connect } from 'react-redux';
-import reducers from '../../reducers';
-import * as actions from '../../actions'; 
-
 
 class NoticeSearch extends React.Component {
     

@@ -1,10 +1,10 @@
+import React from 'react';
+
 import 'css/busker_common/reset.css';
 import 'css/busker_notice/notice_header.css';
 
-import React from 'react';
 import HeaderNav from '../../busker_common/HeaderNav.jsx';
 import NoticeSearch from './NoticeSearch.jsx';
-
 
 class NoticeHeader extends React.Component {
 

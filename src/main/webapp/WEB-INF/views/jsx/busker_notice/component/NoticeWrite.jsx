@@ -1,10 +1,8 @@
-import 'css/busker_common/reset.css';
-
 import React from 'react';
-
 import axios from 'axios';
-
 import ReactQuill from 'react-quill'; // ES6
+
+import 'css/busker_common/reset.css';
 import 'react-quill/dist/quill.snow.css';
 import 'css/busker_notice/notice_write.css';
 
@@ -23,6 +21,7 @@ class NoticeWrite extends React.Component {
             pageNum : props.match.params.num,
             text: '' 
         }
+        
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -37,16 +36,12 @@ class NoticeWrite extends React.Component {
         
             axios.post('/notice/noticeView.do', requestData)  
             .then((result) => {  
-                console.log(result);
                 const list = result.data.returnData; 
-                
-                console.log("NoticeView.jsx component() : ", list); 
                 
                 this.setState({
                     list,
                     text : list.NOTICE_CONTENT
                 });
-                
 
             })
             .catch(function (error) {
@@ -57,15 +52,12 @@ class NoticeWrite extends React.Component {
         
     }
     
-    
     handleChange(value) {
         this.setState({ text: value })
     }
 
     handleSubmit() {
-        
         const pageNum = this.state.pageNum;
-        
         const noticeTitle = document.getElementById("NOTICE_TITLE").value;
         const noticeCategori = document.getElementById("NOTICE_CATEGORI").value;
         const noticeContent = this.state.text;
@@ -82,7 +74,6 @@ class NoticeWrite extends React.Component {
             if (pageNum == undefined) {
                 axios.post('/notice/addNotice.do', requestData ) 
                 .then(function (result) {
-                    console.log(result);
                     if( result.data.returnData == 1 ) alert("게시글 작성이 완료되었습니다."); location.href="/notice/notice_main";
                 })
                 .catch(function (error) {
@@ -92,7 +83,6 @@ class NoticeWrite extends React.Component {
             else {
                 axios.post('/notice/updateNotice.do', requestData ) 
                 .then(function (result) {
-                    console.log(result);
                     if( result.data.returnData == 1 ) alert("게시글 수정이 완료되었습니다."); location.href="/notice/notice_main";
                 })
                 .catch(function (error) {
