@@ -38,13 +38,15 @@ class Contactus extends React.Component {
         
             var requestData = new Object();
             
-            requestData["NOTICE_TITLE"] = noticeTitle;
-            requestData["NOTICE_CONTENT"] = noticeContent;
-            requestData["NOTICE_CATEGORI"] = noticeCategori;
+            requestData["CONTACTUS_EMAIL"] = contactusEmail;
+            requestData["CONTACTUS_TITLE"] = contactusTitle;
+            requestData["CONTACTUS_CONTENT"] = contactusContent;
+            requestData["CONTACTUS_CATEGORI"] = contactusCategori;
             
             axios.post('/notice/addContactus.do', requestData ) 
             .then(function (result) {
-                if( result.data.returnData == 1 ) alert("문의사항이 접수되었습니다. \n 문의 답변은 Email, 마이페이지에서 확인 가능합니다."); location.href="/notice/notice_main";
+                 alert("문의사항이 접수되었습니다. \n 문의 답변은 Email, 마이페이지에서 확인 가능합니다."); 
+                 location.href="/notice/notice_main";
             })
             .catch(function (error) {
                 console.log(error);
@@ -62,10 +64,10 @@ class Contactus extends React.Component {
             <form className="text-editor">
                 <div className="text-title">
                     <select id="CONTACTUS_CATEGORI" name="CONTACTUS_CATEGORI">
-                        <option value="">버스킹 관련 문의</option>
-                        <option value="">스트리밍 관련 문의</option>
-                        <option value="">플랫폼 기능 문의</option>
-                        <option value="">기타 문의</option>
+                        <option value="BUSKING">버스킹 관련 문의</option>
+                        <option value="STREAMING">스트리밍 관련 문의</option>
+                        <option value="PLATFORM">플랫폼 기능 문의</option>
+                        <option value="OTHER">기타 문의</option>
                     </select>
                     <input type="text" id="CONTACTUS_TITLE" name="CONTACTUS_TITLE" placeholder="제목"></input>
                 </div>

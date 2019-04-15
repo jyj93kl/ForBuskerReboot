@@ -46,5 +46,10 @@
         ORDER BY NOTICE_NO DESC
     </select>
     
+    <insert id="addContactus" parameterType="map" useGeneratedKeys="true" keyProperty="CONTACTUS_NO">
+    	INSERT INTO CONTACTUS(CONTACTUS_TITLE, CONTACTUS_CONTENT, CONTACTUS_CATEGORI, CONTACTUS_EMAIL, CONTACTUS_DATE) 
+    	VALUES(#{CONTACTUS_TITLE}, #{CONTACTUS_CONTENT}, #{CONTACTUS_CATEGORI}, #{CONTACTUS_EMAIL}, curdate())
+    </insert>
+    
 </mapper>
 
